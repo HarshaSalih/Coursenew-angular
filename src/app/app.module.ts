@@ -7,6 +7,19 @@ import { AppComponent } from './app.component';
 import { CourseAddComponent } from './course-add/course-add.component';
 import { CourseViewComponent } from './course-view/course-view.component';
 import { HttpClientModule  } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoute:Routes=[
+  {
+    path:"",
+    component:CourseAddComponent
+  },
+
+  {
+    path:"view",
+    component:CourseViewComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -18,7 +31,8 @@ import { HttpClientModule  } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
